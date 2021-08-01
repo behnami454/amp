@@ -1,0 +1,291 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="canonical" href="$SOME_URL">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+   
+    <title>amp</title>
+    
+    
+    
+    
+    
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    
+    <style amp-custom>
+      :root {
+        --color-primary: #005AF0;
+        --color-text-light: #fff;
+      }
+      .hamburger {
+        padding-left: 10px;
+        color: white;
+      }
+      .sidebar {
+        padding: 10px;
+        margin: 0;
+      }
+      .sidebar > li {
+        list-style: none;
+        margin-bottom:10px;
+        padding: 10px;
+      }
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+      }
+      .close-sidebar {
+        font-size: 1.5em;
+        padding-left: 20px;
+        color: white;
+        border: 1px solid white;
+        margin: 3px;
+      }
+      .home-button {
+        margin-top: 8px;
+      }
+      .headerbar {
+        height: 50px;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: brown;
+      }
+      .site-name {
+        margin: auto;
+        color: white;
+      }
+      article {
+        margin-top: 50px;
+      }
+      
+    #sidebar1{
+        background-color: rgb(184, 20, 20);
+    }
+    .amp-carousel-button-prev {
+        left: 16px;
+        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="%23fff"%3E%3Cpath d="M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z"/%3E%3C/svg%3E');
+      }
+      .amp-carousel-button-prev {
+        left: 5%;
+        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="%23fff"%3E%3Cpath d="M11.56 5.56L10.5 4.5 6 9l4.5 4.5 1.06-1.06L8.12 9z"  /%3E%3C/svg%3E');
+      }
+     #carousel-with-preview{
+         margin-top: 50px;
+         background-color: rgba(255, 0, 0, 0.281);
+     }
+    
+     .carousel-with-preview{
+         text-align: center;
+     }
+     #social{
+         margin: 20px;
+     }
+     #form{
+         margin: 20px;
+         text-align: center;
+     }
+     #name{
+         margin: 5px;
+     }
+     #email{
+         margin-top: 5px;
+     }
+     #input{
+         margin: 5px;
+     }
+      /* a custom sharing icon */
+      amp-social-share.custom-style {
+        background-color: #008080;
+        background-image: url('https://raw.githubusercontent.com/google/material-design-icons/master/social/1x_web/ic_share_white_48dp.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      /* blue icons with rounded corners  */
+      amp-social-share.rounded {
+        border-radius: 50%;
+        background-size: 60%;
+        color: var(--color-text-light);
+        background-color: var(--color-primary);
+      }
+    </style>
+    
+  </head>
+  <body>
+    <header class="headerbar">
+        <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+        <div class="site-name">home</div>
+      </header>
+      <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+        <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+        <ul class="sidebar">
+          <li><a href="#">one</a></li>
+          <li><a href="#">two</a></li>
+          <li><a href="#">three</a></li>
+        </ul>
+      </amp-sidebar>
+      <amp-carousel loop
+  id="carousel-with-preview"
+  width="412"
+  height="309"
+  layout="responsive"
+  type="slides"
+  role="region"
+  aria-label="Carousel with slide previews"
+>
+  <amp-img
+    src="https://picsum.photos/200/300?random=1"
+    width="200"
+    height="200"
+    layout="responsive"
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="https://picsum.photos/200/300?random=2"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="https://picsum.photos/200/300?random=3"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+  <amp-img
+    src="https://picsum.photos/200/300?random=4"
+    width="200"
+    height="200"
+    layout="responsive"
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="https://picsum.photos/200/300?random=5"
+    width="200"
+    height="200"
+    layout="responsive"
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="https://picsum.photos/200/300?random=6"
+    width="200"
+    height="200"
+    layout="responsive"
+    alt="apples"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="https://picsum.photos/200/300?random=1"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="https://picsum.photos/200/300?random=2"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="https://picsum.photos/200/300?random=3"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="https://picsum.photos/200/300?random=4"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="https://picsum.photos/200/300?random=5"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="https://picsum.photos/200/300?random=6"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
+
+<div id="social">
+    <amp-social-share type="email" aria-label="Share by email"></amp-social-share>
+    <amp-social-share type="facebook" aria-label="Share on Facebook" data-param-app_id="254325784911610"></amp-social-share>
+    <amp-social-share type="linkedin" aria-label="Share on LinkedIn"></amp-social-share>
+    <amp-social-share type="pinterest" aria-label="Share on Pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
+    <amp-social-share type="tumblr" aria-label="Share on Tumblr"></amp-social-share>
+    <amp-social-share type="twitter" aria-label="Share on Twitter"></amp-social-share>
+    <amp-social-share type="whatsapp" aria-label="Share on WhatsApp"></amp-social-share>
+    
+</div>
+<div id="form">
+    <form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"    target="_blank">
+    <fieldset>
+      <label>
+        <span id="name">Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label id="email">
+        <span >Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe" id="input">
+    </fieldset>
+  </form>
+</div>
+  </body>
+</html>
